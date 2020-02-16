@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+    AddressBook-index
+{% endblock %}
+{% block body %}
+    {% for message in app.flashes('success') %}
+        <div class="alert alert-success mt-2">
+            {{ message }}
+        </div>
+    {% endfor %}
+    {% for message in app.flashes('update') %}
+        <div class="alert alert-success mt-2">
+            {{ message }}
+        </div>
+    {% endfor %}
+    {% for message in app.flashes('delete') %}
+        <div class="alert alert-danger mt-2">
+            {{ message }}
+        </div>
+    {% endfor %}
+    <div class="mt-5"><a href="{{ path('create') }}">Create New Item</a></div>
+    <table class="table table-striped mt-3 text-center">
+        <thead class="table-dark">
+        <tr>
+            <td><b>More</b></td>
+            <td><b>First Name</b></td>
+            <td><b>Last Name</b></td>
+            <td><b>Email</b></td>
+            <td><b>Street And Number</b></td>
+            <td><b>Zip</b></td>
+            <td><b>City</b></td>
+            <td><b>Country</b></td>
+            <td><b>Phone Number</b></td>
+            <td><b>Birthday</b></td>
+            <td><b>Picture</b></td>
+            <td colspan="2"><b>Action</b></td>
+        </tr>
+        </thead>
+            <tbody>
+            {% for address in addresses %}
+                <tr>
+                    <td><a href="{{ path('show',{id:address.id}) }}"><i class="fa fa-eye"></i></a></td>
+                    <td>{{ address.firstName }}</td>
+                    <td>{{ address.lastName }}</td>
+                    <td>{{ address.Email }}</td>
+                    <td>{{ address.streetAndNumber }}</td>
+                    <td>{{ address.zip }}</td>
+                    <td>{{ address.city }}</td>
+                    <td>{{ address.country }}</td>
+                    <td>{{ address.phoneNumber }}</td>
+                    <td>{{ address.birthday|date('Y-m-d') }}</td>
+                    <td><a href="{{ asset('FileUploader/pictures/') ~ address.picture }}" target="_blank"><img src="{{ asset('FileUploader/pictures/') ~ address.picture  }}" class="img-responsive img-thumbnail" width="200px" height="200px"></a></td>
+                    <td><a href="{{ path('delete',{id:address.id}) }}" class="btn btn-danger">delete</a></td>
+                    <td><a href="{{ path('edit',{id:address.id}) }}" class="btn btn-warning">edit</a></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+    </table>
+{% endblock %}

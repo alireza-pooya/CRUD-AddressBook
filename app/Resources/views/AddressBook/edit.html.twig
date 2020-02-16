@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+    AddressBook-edit
+{% endblock %}
+{% block body %}
+    <div class="mt-5">
+        {{ form(form, {'attr': {'novalidate': 'novalidate'}}) }}
+    </div>
+    <a href="{{ path('index') }}" class="btn btn-warning mt-3">return</a>
+
+{% endblock %}
+{% block stylesheets %}
+    <style>
+        label {margin-top: 10px ; margin-bottom: 0 !important;}
+        ul    {margin-bottom: 0 !important;}
+    </style>
+{% endblock %}
+

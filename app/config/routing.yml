@@ -1,0 +1,28 @@
+app:
+  resource: '@AppBundle/Controller/'
+  type: annotation
+
+#show list of addresses
+index:
+  path: AddressBook/index
+  defaults: { _controller:AppBundle:AddressBook:index }
+
+#create new address
+create:
+  path: AddressBook/create
+  defaults: { _controller:AppBundle:AddressBook:create }
+
+#edit an address
+show:
+  path: AddressBook/show/{id}
+  defaults: { _controller:AppBundle:AddressBook:show }
+
+#edit an address
+edit:
+  path: AddressBook/edit/{id}
+  defaults: { _controller:AppBundle:AddressBook:edit }
+
+#delete an address
+delete:
+  path: AddressBook/delete/{id}
+  defaults: { _controller:AppBundle:AddressBook:delete }

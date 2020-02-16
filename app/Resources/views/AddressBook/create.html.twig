@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+    AddressBook-create
+{% endblock %}
+{% block body %}
+    <div class="mt-5">
+        {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+        {{ form_row(form.firstName, {'attr': {'novalidate': 'novalidate'}}) }}
+        {{ form_row(form.lastName, {'attr': {'novalidate': 'novalidate'}}) }}
+        {{ form_row(form.email, {'attr': {'novalidate': 'novalidate'}}) }}
+        {{ form_row(form.streetAndNumber, {'attr': {'novalidate': 'novalidate'}}) }}
+        {{ form_row(form.city, {'attr': {'novalidate': 'novalidate'}}) }}
+        {{ form_row(form.country, {'attr': {'novalidate': 'novalidate'}}) }}
+        {{ form_row(form.phoneNumber, {'attr': {'novalidate': 'novalidate'}}) }}
+        {{ form_row(form.zip, {'attr': {'novalidate': 'novalidate'}}) }}
+        {{ form_row(form.birthday, {'attr': {'novalidate': 'novalidate'}}) }}
+        {{ form_row(form.image, {'attr': {'novalidate': 'novalidate'}}) }}
+        {{ form_end(form, {'attr': {'novalidate': 'novalidate'}}) }}
+    </div>
+{% endblock %}
+{% block stylesheets %}
+    <style>
+        label {margin-top: 10px ; margin-bottom: 0 !important;}
+        ul    {margin-bottom: 0 !important;}
+    </style>
+{% endblock %}
+

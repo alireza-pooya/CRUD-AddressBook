@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+    AddressBook-{{ address.firstName }}{{ address.lastName }}
+{% endblock %}
+{% block body %}
+    <div class="row mt-5 bg-light p-3">
+        <div class="col-12 col-md-4">
+            <div>
+                <p><b>First Name :</b></p>
+                <p>{{ address.firstName }}</p>
+            </div>
+            <div>
+                <p><b>Last Name :</b></p>
+                <p>{{ address.lastName }}</p>
+            </div>
+            <div>
+                <p><b>Email :</b></p>
+                <p>{{ address.Email }}</p>
+            </div>
+            <div>
+                <p><b>Street And Number :</b></p>
+                <p>{{ address.streetAndNumber }}</p>
+            </div>
+            <div>
+                <p><b>Zip :</b></p>
+                <p>{{ address.zip }}</p>
+            </div>
+        </div>
+        <div class="col-12 col-md-4">
+            <div>
+                <p><b>City :</b></p>
+                <p>{{ address.city }}</p>
+            </div>
+            <div>
+                <p><b>Country :</b></p>
+                <p>{{ address.country }}</p>
+            </div>
+            <div>
+                <p><b>Phone Number :</b></p>
+                <p>{{ address.phoneNumber }}</p>
+            </div>
+            <div>
+                <p><b>Birthday :</b></p>
+                <p>{{ address.birthday|date('Y-m-d') }}</p>
+            </div>
+        </div>
+        <div class="col-12 col-md-4">
+            <div><b>Picture :</b></div>
+            <a href="{{ asset('FileUploader/pictures/') ~ address.picture }}" target="_blank"><img src="{{ asset('FileUploader/pictures/') ~ address.picture  }}" class="img-responsive img-thumbnail" width="200px" height="200px"></a>
+        </div>
+        <div><a href="{{ path('index') }}" class="ml-3 btn btn-success">back</a></div>
+    </div>
+{% endblock %}
+{% block stylesheets %}
+    <style>
+        p {display: inline-block !important;}
+    </style>
+{% endblock %}
+
