@@ -1,4 +1,10 @@
-AddressBook
+CRUD AddressBook with Symfony3.4 and sqlite3
 ===========
 
-A Symfony project created on February 12, 2020, 5:37 pm.
+installation requirements : php >=5.5.9 , php extensions XML - Sqlite3 , composer
+
+===========
+
+after download project, execute composer update and run server,
+
+routes: AddressBook/create , AddressBook/index
